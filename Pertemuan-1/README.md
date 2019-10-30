@@ -1,4 +1,4 @@
-#Pertemuan-1
+# Pertemuan-1
 
 ## CARA  MENDAFTAR GITHUB
 1. Buka www.github.com pada browser, lalu klik Sign Up.
