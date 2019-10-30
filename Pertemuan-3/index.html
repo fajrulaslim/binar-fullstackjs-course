@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tugas Pertemuan 3</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        footer {
+            padding: 1px 5px;
+            text-align: center;
+            color: aliceblue;
+            background-color:rgb(37, 36, 36);
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Selamat Datang</h1>
+    <p>Di Pelatihan <a target="_" href="https://sso.bpjsketenagakerjaan.go.id">BPJS Ketenagakerjaan</a> Bersama Binar Academy.</p>
+    <img src="BPJSxBinar.png" alt="poster" width="400">
+    <br><br>
+    <p>Berikut ini adalah Program Pelatihan yang tersedia di Bulan ini (Oktober 2019):</p>
+    <ul>
+        <li>Pelatihan UI/UX Designer</li>
+        <li>Pelatihan Fullstack Web Developer</li>
+    </ul>
+    <br>
+    <p style="font-weight: bold;">Pendaftaran:</p>
+    <p>Silahkan isi dan lengkapi form berikut ini untuk melakukan pendaftaran.</p>
+    <form action="">
+        <label for="nama">Nama Lengkap</label><br>
+        <input type="text" id="nama" name="nama">
+        <br><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email">
+        <br><br>
+        <label for="pelatihan">Pelatihan Yang Diminati</label><br>
+        <select name="pelatihan" id="pelatihan">
+            <option value="" disabled selected>--Pilih pelatihan</option>
+            <option value="1">UI/UX Designer</option>
+            <option value="2">Fullstack Web Developer</option>
+        </select>
+        <br><br>
+        <label for="usia">Usia</label><br>
+        <input type="number" id="usia" name="usia" min="20" max="40" value="20">
+        <br><br>
+        <label for="alamat">Alamat</label><br>
+        <textarea name="alamat" id="alamat" cols="40" rows="5"></textarea>
+        <br><br>
+        <label>Bidang Keahlian Dasar</label><br>
+        <small>Boleh diisi lebih dari satu keahlian dasar.</small><br>
+        <input type="checkbox" id="bidang1" name="bidang1" value="1"> Design Grafis <br>
+        <input type="checkbox" id="bidang2" name="bidang2" value="2"> Matematika <br>
+        <input type="checkbox" id="bidang3" name="bidang3" value="3"> HTML <br>
+        <input type="checkbox" id="bidang4" name="bidang4" value="4"> CSS <br>
+        <input type="checkbox" id="bidang5" name="bidang5" value="5"> Javascript <br>
+        <br>
+        <button>Daftar Sekarang</button>
+    </form>
+    <br>
+    <hr>
+    <p>Data Peserta yang telah melakukan pendaftaran perhari ini:</p>
+    <table align="center">
+        <tr>
+            <th>#</th>
+            <th>Nama</th>
+            <th>Pelatihan yang diminati</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Maria Anders</td>
+            <td>UI/UX Designer</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Francisco Chang</td>
+            <td>Fullstack Web Developer</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Roland Mendel</td>
+            <td>Fullstack Web Developer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Helen Bennett</td>
+            <td>UI/UX Designer</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Yoshi Tannamuri</td>
+            <td>Fullstack Web Developer</td>
+        </tr>
+    </table>
+    <br>
+    <footer>
+        <p>Binar Academy © 2019 All Right Reserved</p>
+    </footer>
+</body>
+</html>
