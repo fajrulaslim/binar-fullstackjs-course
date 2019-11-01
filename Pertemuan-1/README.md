@@ -19,8 +19,8 @@ berikut ini langkah-langkah melakukan Setup SSH Github.
 5. Jika directory SSH nya tidak ada, maka anda bisa membuatnya sendiri dengan perintah berikut :
 > mkdir ~/.ssh
 6. Jika sudah, pindah ke directory ssh tadi dengan perintah cd, seperti pada langkah ke tiga. Sekarang langkah selanjutnya adalah membuat SSH key nya. Masih di folder ssh tadi, ketikan perintah di bawah ini, jangan lupa masukkan email sesuai dengan email yang kamu gunakan.
-> ssh-keygen  -t rsa -C “fajrul.aslim@gmail.com” -b 4096
-7. Setelah itu kamu akan di minta untuk mengisih id SSH and passphrasenya. Kamu bisa mengosongkan passphrasenya. 
+> ssh-keygen  -t rsa -C “emailkamu” -b 4096
+7. Setelah itu kamu akan di minta untuk mengisi id SSH misal "aslim" and passphrasenya. Kamu bisa mengosongkan passphrasenya. 
 8. Sekarang di dalam folder SSH tadi akan ada 2 file baru dengan nama sesuai dengan id yang kamu masukkan tadi.
 9. Untuk melihat isi folder sshnya, ketikkan perintah 
 > ls.
@@ -42,18 +42,30 @@ artinya SSH keynya belum berhasil di tambahkan. Kita harus menambahnya terlebih 
 ## MEMBUAT REPOSITORY DI GITHUB
 1. Login ke Github kamu.
 2. Pada halaman Dasboard, klik tombol New (berwarna hijau), maka kamu akan dibawa ke halaman Create a New Repository
-pada kolom Repository Name, ketika nama repository yang kamu inginkan. misalnya: FW_aslim.
+pada kolom Repository Name, ketika nama repository yang kamu inginkan. misalnya: first-repo.
 3. Pilih Public, lalu centang pilihan Initialize this repository with a README, dan klik tombol Create Repository.
  pembuatan Repository berhasil.
  
+## CLONE REPOSITORY GITHUB KE LOCAL COMPUTER
+1. Pilih repository, misal first-repo
+2. Klik tombol "Clone or Download" yang berwarna hijau.
+3. Pilih "Clone with SSH", copy link SSH tersebut.
+4. Buka terminal, masuk ke folder dimana kita akan meletakkan hasil Clone. Kemudian, ketikan perintah 
+> git clone linkssh
+5. Tunggu prosesnya hingga selesai. Selamat, kamu berhasil melakukan clone repository github di local computer kamu.
+ 
  ## CARA PUSH KE REMOTE REPOSITORY MELALUI SSH
- 1. Remote dapat kita tambahkan dengan perintah seperti ini:
- > git remote add github git@github.com:fajrulaslim/FW_aslim.git
+ Setelah melakukan clone repository github ke local computer kita, apabila kita melakukan perubahan kita juga dapat melakukan update dari local computer kita kepada repository github kita dengan melakukan push. Berikut langkah-langkahnya.
+ 1. Pertama kita buat sebuah Remote. Remote dapat kita tambahkan dengan perintah seperti ini:
+ > git remote add namaremote linkssh
  2. Setelah itu, silahkan ketik perintah 
  > git remote -v 
  untuk melihat remote apa saja yang sudah ditambahkan.
  3. Bagus, sekarang kita sudah menambahkan remote di dalam repository lokal.
- Selanjutnya kita bisa melakukan push atau mengirim revisi ke repository remote (Github) dengan perintah berikut
- Perintah yang kita gunakan untuk mengirim revisi ke repository remote adalah
- > git push github master
- 4. keterangan: github adalah nama remote, dan master adalah nama cabang tujuan.
+ Selanjutnya kita bisa melakukan push atau mengirim revisi ke repository remote (Github) dengan perintah berikut.
+ Pertama, setujui apa yang sudah kita rubah dengan perintah berikut.
+ > git add .
+ Lalu, kita lakukan commit (langkah kedua dari pesertujuan).
+ > git commit -m "pesan kamu"
+ Teriakhir, perintah yang kita gunakan untuk mengirim revisi ke repository remote adalah
+ > git push namaremote namabranch
