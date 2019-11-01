@@ -1,0 +1,48 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+footer {
+    padding: 1px 5px;
+    text-align: center;
+    color: aliceblue;
+    background-color:rgb(37, 36, 36);
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+    tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.txt-bold {
+    font-weight: bold;
+}
+
+.form-input {
+    min-width: 350px;
+}
+
+#btn-daftar {
+    color: beige;
+    background-color:#3498db;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#btn-daftar:hover {
+    color: beige;
+    background-color:#2980b9;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
