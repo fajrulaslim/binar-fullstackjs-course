@@ -397,3 +397,150 @@ Bentuknya seperti ini:
 
 Sumber: [https://www.petanikode.com/javascript-operator/](https://www.petanikode.com/javascript-operator/)
 
+## Apa itu Tipe Data
+Tipe data adalah jenis-jenis data yang bisa kita simpan di dalam variabel.
+
+Ada 6 tipe data di JavaScript:
+1. String
+2. Number
+3. Boolean
+4. Null
+5. Undefined
+6. Object
+
+## String
+Domain value: semua kemungkinan karakter/kata/kalimat diapit diantara karakter kutip satu atau kutip dua. 
+Setiap karakter yang dibungkus dengan kutip satu (‘) atau kutip dua (“) dianggap sebagai string oleh JavaScript.
+
+```javascript
+  console.log(typeof "ini kata atau kalimat");
+  console.log(typeof 'ini kata atau kalimat');
+```
+
+Penggunaan kutip satu atau dua biasanya merupakan preferensi developer. Saya sendiri terbiasa menggunakan kutip satu karena lebih ringkas tanpa perlu menekan tombol shift setiap kali mengetik. Saya sarankan Anda untuk memilih preferensi dan konsisten.
+
+Walaupun bisa saling menggantikan terkadang untuk membentuk suatu kalimat kita membutuhkan kombinasi keduanya. Misalkan untuk kalimat yang mengandung karakter kutip.
+
+```javascript
+  var str1 = 'Opetartor "typeof" digunakan untuk cek tipe data';
+  var str2 = "i'm learning Javascript right now";
+  
+  console.log(str1);
+  console.log(str2);
+```
+
+Bagaimana jika saya hanya ingin menggunakan kutip satu saja?
+Kita bisa menggunakan backslash (\) untuk escape character.
+
+```javascript
+  var str1 = 'I\'m learning Javascript right now';
+  
+  console.log(str1);
+```
+
+JavaScript mengubah backslash dan special character setelahnya menjadi string. Berikut beberapa karakter special yang perlu menggunakan backslash dalam penggunaannya di JavaScript:
+
+* \’ (single quote)
+* \” (double quote)
+* \\ (backslash)
+* \n (newline)
+
+## Number
+Tipe data ‘number’ pada JavaScript merupakan salah satu tipe data yang unik, bahkan jika dibandingkan dari tipe data serupa pada bahasa pemrograman yang lain.
+
+JavaScript hanya memiliki satu tipe data angka, yaitu number. Tidak ada integer, float, short, long seperti pada bahasa pemrograman lain. Hanya ada number. Angka pada tipe data number di JavaScript disimpan dalam bentuk 64-bit double precision floating point.
+
+Presisi dari tipe angka di JavaScript terjaga sampai 15 angka, tanpa decimal dan exponen. Setelah 15 angka, JavaScript tidak menunjukkan representasi yang benar terhadap angka tersebut.
+
+Akurasi angka pada JavaScript hanya sampai angka 9007199254740992 dan -9007199254740992.
+
+### Nan
+Nilai NaN digunakan untuk merepresentasikan sebuah nilai numerik yang tidak mungkin atau ilegal. Walaupun NaN merupakan singkatan dari Not a Number, NaN sediri termasuk tipe data number (?).
+
+## Boolean
+Tipe data boolean merepresentasikan entitas logika. ‘boolean’ dapat merepresentasikan nilai benar atau salah, satu atau nol.
+
+```javascript
+  var benar = true;
+  var salah = false;
+  
+  console.log(benar);
+  console.log(salah);
+```
+
+Tipe data ‘boolean’ biasanya digunakan untuk merepresentasikan data yang hanya memiliki dua kemungkinan nilai. Tipe data ‘boolean’ sering digunakan oleh beberapa statement seperti if, for, while, switch, dsb untuk menentukan kode mana yang akan dijalankan.
+
+## Null
+Tipe data ‘null’ merepresentasikan ‘tidak memiliki nilai apapun’. Variabel yang memiliki nilai null menandakan bahwa variabel tersebut tidak menunjuk pada object/nilai apapun.
+
+```javascript
+  var tidakpunyanilai = null;
+  
+  console.log(tidakpunyanilai);
+```
+
+null merupakan reserved word di JavaScript sehingga tidak bisa digunakan sebagai nama variabel. Tipe data ‘null’ biasanya digunakan untuk menggantikan nilai sesuatu belum ada namun sudah diekspektasikan akan ada. Biasanya saat deklarasi dan assigning variabel tersebut diberi nilai null. Gunakan null untuk memberikan nilai pada suatu variabel yang belum memiliki nilai tertentu diawal program namun diekspektasikan memiliki suatu nilai saat program berjalan nantinya.
+
+## Undefined
+‘undefined’ merupakan salah satu tipe data yang unik. Setiap variabel yang dideklarasikan dan di-assign nilai pasti pernah memilki nilai ‘undefined’ karena pada dasarnya JavaScript memisahkan proses deklarasi dan assignment. Pada saat pertama kali dideklarasikan variabel akan berisi ‘undefined’ sebelum kemudian digantikan oleh nilai yang diberikan.
+
+```javascript
+  var tidakTerdefinisi;
+  
+  console.log(tidakpunyanilai);
+```
+
+Bukankah seharusnya var tidakTerdefinisi = undefined;?
+Benar, namun hal itu tidak diperlukan karena pada dasarnya setiap variabel yang hanya baru dideklarasikan akan otomatis berisi undefined.
+
+Ada satu hal menarik lainnya tentang tipe data undefined. Kata ‘undefined’ di JavaScript bukan merupakan reserved word. Apa artinya? Kita bisa menggunakan kata ‘undefined’ sebagai nama variabel! Namun kita tidak bisa menggunakannya pada scope global. Kenapa? karena sebenarnya undefined merupakan salah satu property dari global object. Sehingga jika digunakan sebagai nama variabel pada scope global akan tetap bernilai undefined.
+
+## Object
+Object menjadi salah satu tipe data yang unik juga di JavaScript. Pada JavaScript, jika suatu tipe data bukan termasuk primitif maka dapat dipastikan tipe data tersebut Object. Ya, termasuk Array. Pada JavaScript Array merupakan Object.
+
+
+```javascript
+  console.log(typeof[]);
+  
+  var xyz = [1, 2, 3, 4];
+  
+  console.log(typeof xyz);
+```
+
+Object secara sederhana dapat dikatakan sebagai kumpulan pasangan key:value dalam satu wadah. Pasangan key dan value dikatakan sebagai property. Key merupakan string identifier untuk value yang diinginkan. Key merupakan string. Sementara value merupakan nilai dari suatu key. Value dapat berupa tipe data apapun termasuk juga function. Property yang berisi nilai function dikatakan sebagai object method.
+
+### Mendefiniskan Object
+Mendefinisikan object yang memiliki key dan value pada JavaScript cukup mudah. Sintaks yang diperlukan adalah sebagai berikut:
+
+```javascript
+  { key1: value, key2: value, key3: value, ... }
+```
+
+Tanda {} merupakan object literals. Kita dapat mendefinisikan object dengan object literals. Perhatikan bahwa diantara pasangan key dan value perlu ada tanda koma. Selain itu, key harus unik satu sama lain dalam object yang sama. Perlakukan pasangan key dan value ini layaknya variable dan value-nya.
+
+![Mendefiniskan Object](https://miro.medium.com/max/1325/1*u57T4jKrCwYbQPWNXoc6vw.png)
+
+Property key dapat ditulis tanpa menggunakan kutip karena secara otomatis JavaScript akan mengkonversi property key menjadi string. Hal ini memungkinkan Anda untuk menggunakan angka atau simbol dengan bebas sebagai property key.
+
+![Anda bahkan dapat menggunakan simbol dan angka sebagai property key](https://miro.medium.com/max/1325/1*vYphoawvUp3leHDYuUKUWQ.png)
+
+Hal menarik lainnya yang dapat Anda lakukan saat melakukan inisiasi dari object adalah Anda dapat menggunakan variable yang sudah didefinisikan sebelumnya menjadi nilai dari suatu property.
+
+![Menggunakan nilai suatu variable untuk menjadi value property](https://miro.medium.com/max/1324/1*E5PTbd5KkTq_XxY19Y3HLA.png)
+
+Anda juga bisa menggunakan sebuah nilai atau operasi menjadi key dari property dengan menggunakan bracket dalam menuliskan property key.
+
+![Gunakan bucket](https://miro.medium.com/max/1325/1*vl1cli4FrCenEFlS-Kw1dQ.png)
+
+### Mendefinisikan Property Baru dalam Object
+
+Kita dapat mendefinisikan property baru dalam object. Sama seperti mengakses property, kita dapat menggunakan dot notation atau bracket notation.
+
+```javascript
+  object.property_name = new_value
+  object['property_name'] = new_value
+  buku.halaman = 280
+  buku['halaman'] = 280
+```
+
+Sumber: https://medium.com/@jundialwan/kenal-javascript-data-types-part-2-24af80cde66c
