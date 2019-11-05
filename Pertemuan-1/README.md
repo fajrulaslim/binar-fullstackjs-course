@@ -64,8 +64,13 @@ pada kolom Repository Name, ketika nama repository yang kamu inginkan. misalnya:
  3. Bagus, sekarang kita sudah menambahkan remote di dalam repository lokal.
  Selanjutnya kita bisa melakukan push atau mengirim revisi ke repository remote (Github) dengan perintah berikut.
  Pertama, setujui apa yang sudah kita rubah dengan perintah berikut.
+ 
  > git add .
+ 
  Lalu, kita lakukan commit (langkah kedua dari pesertujuan).
+ 
  > git commit -m "pesan kamu"
+ 
  Teriakhir, perintah yang kita gunakan untuk mengirim revisi ke repository remote adalah
+ 
  > git push namaremote namabranch
