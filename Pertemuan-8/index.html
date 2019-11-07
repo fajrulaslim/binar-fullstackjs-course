@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pertemuan 8</title>
+</head>
+<body>
+    <h1>Object Oriented Javascript</h1>
+
+    <script>
+        // let person = {
+        //     nama: 'Binar',
+        //     hello: function(){
+        //         alert('Hello from object');
+        //     }
+        // };
+
+        class Person {
+            // constructor
+            constructor(name, age, gender){
+                this.name = name
+                this.age = age
+                this.gender = gender
+            }
+            // getter
+            get myAge(age){
+                return this.age = newAge
+            }
+
+            // setter
+            hello(){
+                alert(`Hello my name ${this.name}`);
+            }
+        }
+
+        class Teacher extends person {
+            constructor(subject, name, age, gender){
+                super(name, age, gender);
+                this.subject = subject
+            }
+        }
+    </script>
+</body>
+</html>
