@@ -25,22 +25,38 @@
                 this.gender = gender
             }
             // getter
-            get myAge(age){
-                return this.age = newAge
+            get myAge(){
+                return this.age;
             }
 
             // setter
+            set myAge(newAge){
+                return this.age = newAge;
+            }
+
             hello(){
-                alert(`Hello my name ${this.name}`);
+                alert(`Hello my name ${this.name}, my age ${this.age} and i'am ${this.gender}`);
             }
         }
 
-        class Teacher extends person {
+        // Child method from person
+        class Teacher extends Person {
+            // constructor
             constructor(subject, name, age, gender){
                 super(name, age, gender);
                 this.subject = subject
             }
+            // method Override
+            hello(){
+                alert(`Hello i'm teacher, my name ${this.name}`);
+            }
         }
+
+        let fajrul = new Teacher("Programmer", "Fajrul Aslim", 28, "Male");
+        let aslim = new Person("Fajrul Aslim", 28, "Male");
+
+        fajrul.hello();
+        // aslim.hello();
     </script>
 </body>
 </html>
