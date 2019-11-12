@@ -1,0 +1,56 @@
+// AUTHETICATION
+db.createUser({
+    user: "fajrulaslim",
+    pwd: "qwerty123",
+    roles: [{
+        role: "readWrite",
+        db: 'article_project_db'
+    }]
+})
+
+
+// INSERT ONE DATA
+db.articles.insertOne({
+    autor: 'fajrulaslim',
+    title: 'PHP',
+    description: 'Example description book description book'
+})
+
+// INSERT MANY DATA
+db.articles.insertMany([{
+    autor: 'fajrulaslim',
+    title: 'PHP',
+    description: 'Example description book description book'
+}, {
+    autor: 'fajrulaslim',
+    title: 'Node Js',
+    description: 'Example description book description book'
+}])
+
+// VIEW DATA
+db.articles.find()
+db.articles.find().pretty()
+db.articles.finc({title: 'Node Js}).pretty()
+
+// UPDATE DATA
+db.articles.update({
+    _id: ObjectId("5dc960f7dcd1220c6894b941")
+}, {
+    autor: 'fajrulaslim',
+    title: 'Javascript',
+    description: 'Example description book description book'
+})
+
+db.articles.updateOne({
+    title: 'Javascript'
+}, {
+    $set: {
+        autor: 'aslim'
+    }
+})
+
+db.articles.updateMany({}, {
+    $rename: {
+        "autor": "author"
+    }
+})
