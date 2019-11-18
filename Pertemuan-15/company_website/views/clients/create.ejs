@@ -5,8 +5,22 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <%- include('../partials/navigation') %>
 
     <h1>Create Clients</h1>
+    <hr>
+    <form action="" method="">
+      <br>
+      <label for="">Nama: </label><br>
+      <input type="text" placeholder="Masukkan nama">
+      <br><br>
+      <label for="">Total Project: </label><br>
+      <input type="number" placeholder="Total Project">
+      <br><br>
+      <label for="">Alamat: </label><br>
+      <textarea name="alamat" id="alamat" cols="30" rows="10"></textarea>
+      <br><br>
+      <button name="kirim" type="submit">Submit</button>
+      <a href="/clients">Kembali</a>
+    </form>
   </body>
 </html>
