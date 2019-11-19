@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Contact</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <%- include('../partials/navigation') %>
-    
-    <h1>Contact Page</h1>
-</body>
-</html>
+<%- include('../partials/header') %>
+<%- include('../partials/navigation') %>
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1><%= title %></h1>
+                <br>
+                <div class="alert alert-primary" role="alert">
+                    Learning Express JS by Fajrul Aslim - <span class="text-secondary">fajrul.aslim@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

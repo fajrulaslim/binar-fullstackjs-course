@@ -1,38 +1,47 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Create Articles</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('../partials/header') %>
+<%- include('../partials/navigation') %>
 
-    <h1>Create Articles</h1>
-    <hr>
-    <form action="/articles/create_article" method="post" class="form-articles">
-      <br>
-      <label for="title">Title: </label><br>
-      <input type="text" name="title" id="title" placeholder="Masukkan Title">
-      <br><br>
-      <label for="author">Author: </label><br>
-      <input type="text" name="author" id="author" placeholder="Masukkan Author">
-      <br><br>
-      <label for="">Description: </label><br>
-      <textarea name="description" id="description" cols="30" rows="10" placeholder="Masukkan Description"></textarea>
-      <br><br>
-      <input type="hidden" id="published_date" name="published_date">
-      <button type="submit">Submit</button>
-      <a href="/articles">Kembali</a>
-    </form>
-  </body> 
+<section class="mt-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><%= title %></h1>
+        <form action="/articles/create_article" method="post" class="mt-5">
+          <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" name="title" class="form-control" id="title" placeholder="Input title">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="author" class="col-sm-2 col-form-label">Author</label>
+            <div class="col-sm-10">
+              <input type="text" name="author" class="form-control" id="author" placeholder="Input author">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <textarea name="description" id="description" cols="30" rows="7" class="form-control"
+                placeholder="Input description"></textarea>
+            </div>
+          </div>
+          <input type="hidden" id="published_date" name="published_date">
+          <div class="form-group row justify-content-end">
+            <div class="col-sm-10 ">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="/articles" class="btn btn-outline-secondary">Kembali</a>
+            </div>
+          </div>
 
-  <script>
-    // var today = new Date();
-    //   document.getElementById("published_date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-    document.getElementById("published_date").value = Date.now()
-  </script>
+<script>
+  document.getElementById("published_date").value = Date.now()
+</script>
 
- </html>
-
-
-
+<%- include('../partials/footer') %>
