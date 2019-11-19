@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Articles</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>Create Articles</h1>
+    <hr>
+    <form action="/articles/create_article" method="post" class="form-articles">
+      <br>
+      <label for="title">Title: </label><br>
+      <input type="text" name="title" id="title" placeholder="Masukkan Title">
+      <br><br>
+      <label for="author">Author: </label><br>
+      <input type="text" name="author" id="author" placeholder="Masukkan Author">
+      <br><br>
+      <label for="">Description: </label><br>
+      <textarea name="description" id="description" cols="30" rows="10" placeholder="Masukkan Description"></textarea>
+      <br><br>
+      <input type="hidden" id="published_date" name="published_date">
+      <button type="submit">Submit</button>
+      <a href="/articles">Kembali</a>
+    </form>
+  </body> 
+
+  <script>
+    // var today = new Date();
+    //   document.getElementById("published_date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+
+    document.getElementById("published_date").value = Date.now()
+  </script>
+
+ </html>
+
+
+

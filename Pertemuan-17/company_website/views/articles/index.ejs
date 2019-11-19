@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include('../partials/navigation') %>
+
+    <h1>List Articles</h1>
+    <a href="/articles/create">Create Article</a>
+    <ol>
+        <% data.forEach(function(val){ %>
+            <li>
+                Title: <%= val.title %> <br>
+                Author: <%= val.author %> <br>
+                <a href="/articles/detail/<%= val._id %>">Detail</a> | 
+                <a href="/articles/edit/<%= val._id %>">Edit</a> | 
+                <a href="/articles/delete/<%= val._id %>">Delete</a>
+                <br><br>
+            </li>
+            <br>
+        <% }) %>
+    </ol>
+  </body>
+</html>
