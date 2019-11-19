@@ -14,12 +14,6 @@ exports.create = function(req, res, next){
 }
 
 exports.create_article = function(req, res, next){
-    // let title = req.body.title;
-    // let author = req.body.author;
-    // let description = req.body.description;
-
-    // res.send('Create Article <br> - title: ' + title + '<br> - author: ' + author + '<br> - description: ' + description); 
-
     let article = new Article(req.body);
     
     // insert data to database
@@ -35,9 +29,51 @@ exports.create_article = function(req, res, next){
 
  exports.detail = function(req, res, next){
     let id = req.params.id;
-    Article.find({ _id: id}, function(err, results){
+    Article.findOne({ _id: id}, function(err, results){
         if(err) throw err;
-        res.send(`Detail:`);
+        res.render('articles/detail', { 
+            data: results 
+        });
+    }) 
+ }
+
+ exports.edit = function(req, res, next){
+    let id = req.params.id;
+    Article.findOne({ _id: id}, function(err, results){
+        if(err) throw err;
+        res.render('articles/edit', { 
+            data: results 
+        });
+    }) 
+ }
+
+ exports.edit_article = function(req, res, next){
+    var myquery = { _id: req.body._id };
+    var newvalues = { $set: {
+        title: req.body.title, 
+        author: req.body.author,
+        description: req.body.description 
+    } };
+    
+    // insert data to database
+    Article.updateOne(myquery, newvalues, function(err, results){
+        if(err){
+            console.log(err.message);
+        } else {
+            res.redirect('/articles');
+        }
+    })
+ }
+
+ exports.delete = function(req, res, next){
+    let id = req.params.id;
+    Article.deleteOne({ _id: id}, function(err, results){
+        if(err){
+            console.log(err.message);
+        } else {
+            console.log('Data berhasil dihapus!');
+            res.redirect('/articles');
+        }
     }) 
  }
 

@@ -16,7 +16,7 @@
                 Author: <%= val.author %> <br>
                 <a href="/articles/detail/<%= val._id %>">Detail</a> | 
                 <a href="/articles/edit/<%= val._id %>">Edit</a> | 
-                <a href="/articles/delete/<%= val._id %>">Delete</a>
+                <a href="/articles/delete/<%= val._id %>" onclick="return confirm('Apa kamu yakin?');">Delete</a>
                 <br><br>
             </li>
             <br>
