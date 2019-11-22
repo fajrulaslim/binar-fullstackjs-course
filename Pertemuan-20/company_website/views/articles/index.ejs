@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navigation') %>
+
+<section class="mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1><%= title %></h1>
+                <a href="/articles/create" class="btn btn-primary btn-sm">Create Article</a>
+                <br>
+                <table class="table table-striped table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% let a = 1; %>
+                        <% data.forEach(function(val){ %>
+                        <tr>
+                            <th scope="row"><%= a %></th>
+                            <td><%= val.title %></td>
+                            <td><%= val.author %></td>
+                            <td>
+                                <a class="btn btn-sm btn-outline-success"
+                                    href="/articles/detail/<%= val._id %>">Detail</a>
+                                <a class="btn btn-sm btn-outline-warning" href="/articles/edit/<%= val._id %>">Edit</a>
+                                <a class="btn btn-sm btn-outline-danger" href="/articles/delete/<%= val._id %>"
+                                    onclick="return confirm('Apa kamu yakin?');">Delete</a>
+                            </td>
+                        </tr>
+                        <% a++; %>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>
